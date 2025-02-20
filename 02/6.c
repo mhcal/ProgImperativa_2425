@@ -1,26 +1,30 @@
 #include <stdio.h>
 
 int fib1(int n) {
-	if (n < 2)
+	if (n == 0)
+		return 0;
+	else if (n == 1)
 		return 1;
 	else
 		return fib1(n - 1) + fib1(n - 2);
 }
 
 int fib2(int n) {
-	int a, b, c;
-	a = b = 1;
-	for (int i = 2; i <= n; i++) {
-		c = a;
-		a += b;
-		b = c;
+	int a, b;
+	a = 0;
+	b = 1;
+	while (n >= 2) {
+		b += a;
+		a = b - a;
+		n--;
 	}
-	return a;
+	return b;
 }
 
 int main() {
 	int n;
 	scanf("%d", &n);
-	printf("recursive: %d\niterative: %d", fib1(n), fib2(n));
+	printf("iterative: %d\n", fib2(n));
+	printf("recursive: %d\n", fib1(n));
 	return 0;
 }

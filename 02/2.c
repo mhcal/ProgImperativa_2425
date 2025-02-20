@@ -2,7 +2,7 @@
 
 float multInt2(int n, float m, int *i) {
 	*i = 0;
-	float r;
+	float r = 0;
 	while (n > 0) {
 		if (n % 2 == 1)
 			r += m;
