@@ -2,13 +2,17 @@
 
 int mdc1(int a, int b, int *i) {
 	*i = 0;
+	int mdc = 1;
 	int s = (a < b) ? a : b;
-	for (int j = s; j > 0; j--) {
-		if (a % j == 0 && b % j == 0)
-			return j;
+	while (s > 1) {
+		if (a % s == 0 && b % s == 0) {
+			mdc = s;
+			break;
+		}
 		(*i)++;
+		s--;
 	}
-	return 1;
+	return mdc;
 }
 
 int main() {

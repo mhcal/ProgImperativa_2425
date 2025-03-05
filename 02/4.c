@@ -6,7 +6,7 @@ int mdc2(int a, int b, int *i) {
 		(a > b) ? (a -= b) : (b -= a);
 		(*i)++;
 	}
-	return (a == 0) ? b : a;
+	return a + b;
 }
 int main() {
 	int a, b, i;
