@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "string.h"
 
 int isVowel(char c) {
 	if(c < 97)
@@ -7,14 +8,15 @@ int isVowel(char c) {
 }
 
 int retiraVogaisRep(char *s) {
-	int n = 0;
-	for(int i = 0; s[i] != 0; i++) {
-		while(isVowel(s[i]) && isVowel(s[i + 1])) {
-			for(int j = i; s[j] != 0; j++)
-				s[j] = s[j + 1];
+	int n, write;
+	n = write = 0;
+	for(int read = 0; s[read] != 0; read++) {
+		if(!(isVowel(s[read]) && s[read] == s[read + 1]))
+			s[write++] = s[read];
+		else
 			n++;
-		}
 	}
+	s[write] = 0;
 	return n;
 }
 

@@ -15,6 +15,6 @@ int contaVogais(char *s) {
 	return n;
 }
 int main() {
-	printf("%d", contaVogais("Miguel"));
+	printf("%d", contaVogais("This is a test"));
 	return 0;
 }

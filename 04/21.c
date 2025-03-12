@@ -2,10 +2,9 @@
 
 int ordenado(int v[], int n) {
 	int r = 1;
-	for(int i = 0; i < n - 1; i++) {
+	for(int i = 0; i < n - 1 && r == 1; i++) {
 		if(v[i] > v[i + 1]) {
 			r = 0;
-			break;
 		}
 	}
 	return r;

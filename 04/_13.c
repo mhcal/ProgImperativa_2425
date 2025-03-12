@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "string.h"
 
 int isVowel(char c) {
 	if(c < 97)
@@ -7,23 +6,6 @@ int isVowel(char c) {
 	return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
 }
 
-int duplicaVogais(char *s) {
-	int n = 0;
-	int len = strlen(s);
-	for(int i = 0; i < len; i++) {
-		if(isVowel(s[i])) {
-			for(int j = len; j > i; j--)
-				s[j] = s[j - 1];
-		}
-		len++;
-		i++;
-		n++;
-	}
-	s[len] = 0;
-	return n;
-}
-
-/*
 int duplicaVogais(char *s) {
 	int n, originalLength, vowelCount;
 	n = originalLength = vowelCount = 0;
@@ -45,7 +27,6 @@ int duplicaVogais(char *s) {
 	}
 	return vowelCount;
 }
-*/
 
 int main() {
 	char s[100] = "Esta e uma string com duplicados";
